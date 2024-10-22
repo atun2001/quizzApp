@@ -1,0 +1,171 @@
+/* Importing the Inter font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+/* Global Styles */
+body,
+html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    color: #F8F9FB;
+    background-color: #282929;
+}
+
+header {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    padding: 1rem 2rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 10;
+}
+
+.logo {
+    height: 100%;
+}
+
+.logo img {
+    width: 30%;
+}
+
+.navbar {
+    width: 100%;
+    height: 5%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.nav-links {
+    height: 100%;
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+.nav-links a {
+    color: #F8F9FB;
+    margin-right: 1.5rem;
+    text-decoration: none;
+    font-weight: 600;
+}
+.nav-links a:hover {
+    color: #50D2C2;
+}
+
+.nav-links .btn{
+    width: 30%;
+}
+
+.search-bar {
+    width: 40%;
+    padding: 0.5rem 1rem;
+    background-color: #1d1e1e;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    margin-right: 10%;
+    font-size: 0.9rem;
+}
+
+.login-btn {
+    padding: 0.5rem 1.5rem;
+    background-color: #282929;
+    color: white;
+    border: none;
+    border: 1px solid white;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    margin-right: 5%;
+    margin-left: 15%;
+}
+.login-btn:hover {
+    background-color: #50D2C2;
+    color: #282929;
+}
+
+.start-btn {
+    padding: 0.5rem 1.5rem;
+    background-color: #50D2C2;
+    color: #282929;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+}
+.start-btn:hover  {
+    background-color: #3698a8;
+}
+.hero {
+    padding: 6rem 2rem;
+    text-align: center;
+    margin-top: 80px;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    color: #4A4A4A;
+    font-weight: 600;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    color: #6C757D;
+    margin: 1rem 0;
+}
+
+.cta-btn {
+    padding: 1rem 2rem;
+    background-color: #FF6B6B;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.features {
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.features h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #4A4A4A;
+}
+
+.feature-cards {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.card {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    width: 30%;
+}
+
+.card h3 {
+    font-size: 1.5rem;
+    color: #4A90E2;
+    margin-bottom: 1rem;
+}
+
+.card p {
+    color: #6C757D;
+}
+
+footer {
+    background-color: white;
+    color: #4A4A4A;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 3rem;
+    font-size: 0.9rem;
+}
