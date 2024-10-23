@@ -1,24 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flashcards</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
+
 <body>
-    <div class="container">
-        <div id="flashcard-container" class="flashcard">
-            <div id="flashcard-inner">
-                <div id="card-front" class="card-side card-front" onclick="flipCard()"></div>
-                <div id="card-back" class="card-side card-back" onclick="flipCard()"></div>
+    <header>
+        <nav class="navbar">
+            <div class="navbar__logo">
+                <img src="./assets/images/knowt-logo.png" alt="MyApp Logo">
+            </div>
+            <div class="navbar__links">
+                <a href="#" class="navbar__link">Home</a>
+                <a href="#" class="navbar__link">Learning</a>
+                <a href="#" class="navbar__link">Exams</a>
+                <input type="text" placeholder="Search for anything" class="navbar__search-bar">
+                <div class="navbar__buttons">
+                    <button class="button--login">Login</button>
+                    <button class="button--start">Get Started</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="flashcard-container">
+        <div class="flashcard">
+            <div class="flashcard__title">
+                <h1>20 câu tương đương 28</h1>
+            </div>
+            <div class="flashcard__review">
+                <i class="fa fa-star" style="font-size:18px; color: #FFD43B;"></i>
+                <p>4.6 (14 reviews)</p>
+            </div>
+
+            <div class="flashcard__content">
+                <div class="flashcard__study-mode">
+                    <ul class="flashcard__study-mode-list">
+                        <li class="study-mode__item">
+                            <div class="study-mode__icon">
+                                <i class="fa-regular fa-rectangle-list"></i>
+                            </div>
+                            <div class="study-mode__text">Flashcards</div>
+                        </li>
+                        <li class="study-mode__item">
+                            <div class="study-mode__icon">
+                                <i class="fa-solid fa-book-open-reader"></i>
+                            </div>
+                            <div class="study-mode__text">Learn</div>
+                        </li>
+                        <li class="study-mode__item">
+                            <div class="study-mode__icon">
+                                <i class="fa fa-pencil"></i>
+                            </div>
+                            <div class="study-mode__text">Test</div>
+                        </li>
+                        <li class="study-mode__item">
+                            <div class="study-mode__icon">
+                                <i class="fa-solid fa-wave-square"></i>
+                            </div>
+                            <div class="study-mode__text">Match</div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flashcard-slide-front">
+                            <div class="flashcard-slide-front-quiz">
+                                <p>
+                                    Câu 11. Để nghiên cứu kinh tế- chính trị Mác- Lênin có thể sử dụng nhiều phương
+                                    pháp, phương pháp nào quan trọng nhất?
+                                </p>
+                                <br>A. Trừu tượng hoá khoa học</br>
+                                <br>B. Phân tích và tổng hợp</br>
+                                <br>C. Phân tích và tổng hợp</br>
+                                <br>D. Phân tích và tổng hợp</br>
+                            </div>
+                        </div>
+                        <div class="flashcard-slide-back">
+                            <div class="flashcard-slide-back-answer">
+                                <br>A. Trừu tượng hoá khoa học</br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+ <!--                <div class="flashcard-slider">
+                    <div class="flip-card active">
+                        <div class="flip-card-inner">
+                            <div class="flashcard__slide-front">
+                                <div class="flashcard__quiz">
+                                    <p>Câu 1: Nội dung của thẻ 1.</p>
+                                </div>
+                            </div>
+                            <div class="flashcard__slide-back">
+                                <div class="flashcard__answer">
+                                    <p>Đáp án: Đáp án cho thẻ 1.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flashcard__slide-front">
+                                <div class="flashcard__quiz">
+                                    <p>Câu 2: Nội dung của thẻ 2.</p>
+                                </div>
+                            </div>
+                            <div class="flashcard__slide-back">
+                                <div class="flashcard__answer">
+                                    <p>Đáp án: Đáp án cho thẻ 2.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flashcard__slide-front">
+                                <div class="flashcard__quiz">
+                                    <p>Câu 3: Nội dung của thẻ 3.</p>
+                                </div>
+                            </div>
+                            <div class="flashcard__slide-back">
+                                <div class="flashcard__answer">
+                                    <p>Đáp án: Đáp án cho thẻ 3.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flashcard-tools">
+                    <button class="prev" onclick="changeCard(-1)">Previous</button>
+                    <button class="next" onclick="changeCard(1)">Next</button>
+                </div> -->
             </div>
         </div>
-        <div class="navigation">
-            <button id="prev-button" class="btn">Previous</button>
-            <button id="next-button" class="btn">Next</button>
-        </div>
-    </div>    
+    </div>
+    </div>
     <script src="js/script.js"></script>
 </body>
+
 </html>
