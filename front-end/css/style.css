@@ -10,6 +10,7 @@ html {
     font-family: 'Inter', sans-serif;
     color: #F8F9FB;
     background-color: #282929;
+    overflow-x: hidden;
 }
 
 .flashcard-container {
@@ -48,9 +49,11 @@ html {
     background-color: #363838;
     border: 3px solid transparent;
 }
+
 .flashcard__study-mode-list li:last-child {
     margin-right: 0;
 }
+
 .flashcard__study-mode-list li:hover {
     border-bottom: 3px solid #50D2C2;
 }
@@ -73,127 +76,152 @@ html {
     text-align: center;
 }
 
- .flashcard__content .flip-card .flip-card-inner .flashcard-slide-front {
-    height: 450px;
-    background-color: #363838;
-    margin-top: 3%;
-    border-radius: 5px;
-} 
-
- .flashcard-slide-front-quiz {
-    font-size: 20px;
-    align-content: center;
-    background-color: #363838;
-    height: 95%;
-    margin: 3% 3%;
-    border-radius: 5px;
-} 
-
-.flashcard__content .flip-card .flip-card-inner .flashcard-slide-back {
-    font-size: 20px;
-    height: 450px;
-    background-color: #363838;
-    margin-top: 3%;
-    border-radius: 5px;
-} 
-
- .flashcard-slide-back-answer {
-    text-align: center;
-    align-content: center;
-    background-color: #363838;
-    height: 95%;
-    margin: 3% 3%;
-    border-radius: 5px;
-} 
-/* .flashcard-slider {
-    font-size: 20px;
-    height: 450px;
-    text-align: center;
-    align-content: center;
-    background-color: #363838;
-    margin: auto;
-    border-radius: 5px;
-
-} */
-
-.flip-card {
-    background-color: transparent;
-    margin-right: 2%;
-    perspective: 1200px;
-}
-.flip-card-inner {
-    position: relative;
-    transition: transform 1s;
-    transform-style: preserve-3d;
-    transform-origin: center;
-  }
-
-.flip-card.flipped .flip-card-inner{
-    transform: rotateY(180deg);
-}
-
 .flashcard-slide-front,
 .flashcard-slide-back {
+    background-color: #363838;
+    margin-top: auto;
+    border-radius: 5px;
     position: absolute;
     width: 100%;
     height: 100%;
-    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
 }
 
-.flashcard-slide-back {
-    transform: rotateY(-180deg);
+.flashcard-slide-front-quiz,
+.flashcard-slide-back-answer {
+    font-size: 20px;
+    align-content: center;
+    background-color: #363838;
+    height: 95%;
+    margin: 3% 2%;
+    border-radius: 5px;
 }
-    
-/*     .flip-card.active {
-        display: block;
-    }
-    
-    .flip-card-inner {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        transition: transform 0.8s;
-        transform-style: preserve-3d;
-    }
-    
-    .flip-card:hover .flip-card-inner {
-        transform: rotateY(180deg);
-    }
-    
-    .flashcard__slide-front, 
-    .flashcard__slide-back {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        backface-visibility: hidden;
-        -webkit-backface-visibility: hidden;
-        border-radius: 5px;
-        background-color: #363838;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    
-    .flashcard__slide-back {
-        transform: rotateY(180deg);
-    }
-    
-    button {
-        position: absolute;
-        bottom: 10px;
-        background-color: #007bff;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        padding: 10px 15px;
-        cursor: pointer;
-    }
-    
-    button.prev {
-        left: 10px;
-    }
-    
-    button.next {
-        right: 10px;
-    } */
+
+.flip-card {
+    background-color: transparent;
+    perspective: 1200px;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 450px;
+    transition: transform 0.8s ease-in-out;
+    transform-origin: center;
+    transform-style: preserve-3d;
+}
+
+.flip-card .flip-card-inner.flipped {
+    transform: rotateX(180deg);
+}
+
+.flashcard-slide-back {
+    transform: rotateX(-180deg);
+}
+
+.swiper-container {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.swiper-slide-active {
+    opacity: 1;
+}
+
+.flashcard-tools {
+    display: flex;
+    height: 50px;
+    width: 100%;
+    margin-top: 5%;
+}
+
+.flashcard-tools__media {
+    width: 30%;
+}
+
+.flashcard-tools__icon button {
+    background-color: transparent;
+    border: none;
+    height: 50px;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    width: 50px;
+    margin-right: 2%;
+    pointer-events: auto;
+}
+
+.flashcard-tools__media button:hover {
+    background-color: #363838;
+    cursor: pointer;
+}
+
+.flashcard-tools__media i {
+    font-size: 24px;
+}
+
+.flashcard-tools__transition .flashcard-tools__transition--arrow {
+    display: inline-block;
+    border: 1px solid #363838;
+}
+
+.flashcard-tools__transition {
+    position: relative;
+    display: flex;
+    text-align: center;
+    width: 40%;
+}
+
+.flashcard-tools__expand {
+    width: 30%;
+    text-align: right;
+}
+
+.flashcard-tools__expand button:hover {
+    background-color: #363838;
+    cursor: pointer;
+}
+
+.flashcard-tools__expand i {
+
+    font-size: 24px;
+}
+
+
+.flashcard-tools__transition--counter {
+    margin: auto;
+}
+
+.flashcard-tools__transition button:hover {
+    background-color: #363838;
+    cursor: pointer;
+}
+
+.flashcard-tools__transition i {
+    font-size: 24px;
+}
+
+.flashcard__content .flashcard-progressBar {
+    height: 50px;
+    width: 100%;
+    align-content: center;
+}
+
+.flashcard__content .flashcard-progressBar .swiper-pagination {
+    position: relative;
+    width: 100%;
+    background-color: #363838;
+    color: #63E6BE;
+}
+
+.swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+    background: #63E6BE !important;
+}
